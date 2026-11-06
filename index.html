@@ -2,211 +2,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Cyber Cafe | Fast and Reliable Services</title>
-  <meta name="description" content="Professional cyber cafe services, printing, photocopying, internet and online assistance.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>FastNet Cyber Cafe | Ruaka</title>
+<meta name="description" content="FastNet Cyber Cafe in Ruaka. Printing, photocopying, online services, typing, scanning and graphic design.">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #243047;
-      line-height: 1.6;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      background: #102b50;
-      color: white;
-      padding: 25px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6f9;
+  color: #243047;
+  line-height: 1.7;
+}
 
-    header h1 {
-      font-size: 25px;
-    }
+header {
+  background: #0b1e3b;
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-    }
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
 
-    .hero {
-      background: linear-gradient(120deg, #102b50, #1676b8);
-      color: white;
-      text-align: center;
-      padding: 85px 20px;
-    }
+.logo span {
+  color: #e5b84c;
+}
 
-    .hero h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 17px;
+  font-size: 14px;
+}
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 25px;
-    }
+.hero {
+  background: linear-gradient(120deg, #09172e, #173b68);
+  color: white;
+  padding: 100px 8%;
+  text-align: center;
+}
 
-    .btn {
-      display: inline-block;
-      background: #ffbf47;
-      color: #102b50;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.hero h2 {
+  font-size: 43px;
+  margin-bottom: 15px;
+}
 
-    section {
-      padding: 55px 8%;
-      text-align: center;
-    }
+.hero h2 span {
+  color: #edc45d;
+}
 
-    section h2 {
-      margin-bottom: 25px;
-      color: #102b50;
-      font-size: 29px;
-    }
+.hero p {
+  font-size: 18px;
+  margin-bottom: 28px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 20px;
-    }
+.btn {
+  display: inline-block;
+  background: #e7bb50;
+  color: #102343;
+  padding: 13px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin: 5px;
+}
 
-    .service {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px #00000010;
-    }
+.btn:hover {
+  background: white;
+}
 
-    .service h3 {
-      color: #1676b8;
-      margin-bottom: 10px;
-    }
+.btn-outline {
+  border: 1px solid #e7bb50;
+  color: white;
+  background: transparent;
+}
 
-    .about {
-      background: white;
-    }
+section {
+  padding: 65px 8%;
+  text-align: center;
+}
 
-    .contact {
-      background: #e8f0f8;
-    }
+section h2 {
+  color: #102343;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
 
-    footer {
-      background: #102b50;
-      color: white;
-      text-align: center;
-      padding: 22px;
-    }
+.intro {
+  max-width: 700px;
+  margin: auto;
+}
 
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-      }
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
 
-      nav a {
-        margin: 5px;
-        font-size: 14px;
-      }
+.service {
+  background: white;
+  padding: 28px 20px;
+  border-radius: 12px;
+  border-bottom: 4px solid #d9ad42;
+  box-shadow: 0 4px 15px #0000000c;
+}
 
-      .hero h2 {
-        font-size: 29px;
-      }
-    }
-  </style>
+.service .symbol {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  color: #173b68;
+  margin-bottom: 10px;
+}
+
+.about {
+  background: white;
+}
+
+.about p {
+  max-width: 750px;
+  margin: auto;
+}
+
+.contact {
+  background: #eaf0f8;
+}
+
+.contact-details {
+  background: white;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.contact-details p {
+  margin: 10px;
+}
+
+footer {
+  background: #09172e;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+footer span {
+  color: #e7bb50;
+}
+
+@media(max-width: 650px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .hero {
+    padding: 70px 20px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>My Cyber Cafe</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">FastNet <span>Cyber Cafe</span></div>
 
-  <div class="hero" id="home">
-    <h2>Welcome to My Cyber Cafe</h2>
-    <p>Your trusted partner for digital and office services.</p>
-    <a href="#services" class="btn">Explore Our Services</a>
-  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="services">
-    <h2>Our Services</h2>
+<div class="hero" id="home">
+  <h2>Your Digital Partner in <span>Ruaka</span></h2>
+  <p>Reliable Cyber Services. Professional Support. Excellent Service.</p>
 
-    <div class="services">
+  <a href="#services" class="btn">Explore Services</a>
 
-      <div class="service">
-        <h3>Printing & Photocopying</h3>
-        <p>Quality black and white and colour printing services.</p>
-      </div>
+  <a href="https://wa.me/254711596210"
+     class="btn btn-outline">WhatsApp Us</a>
+</div>
 
-      <div class="service">
-        <h3>Online Applications</h3>
-        <p>Assistance with online applications and registrations.</p>
-      </div>
+<section id="services">
+  <h2>Our Services</h2>
+  <p class="intro">
+    FastNet Cyber Cafe provides convenient and
+    professional digital services for individuals,
+    students and businesses.
+  </p>
 
-      <div class="service">
-        <h3>Document Services</h3>
-        <p>Typing, scanning, editing and document formatting.</p>
-      </div>
+  <div class="services">
 
-      <div class="service">
-        <h3>Internet Services</h3>
-        <p>Reliable internet access and computer assistance.</p>
-      </div>
-
-      <div class="service">
-        <h3>Graphic Design</h3>
-        <p>Posters, business cards, CVs and other designs.</p>
-      </div>
-
-      <div class="service">
-        <h3>Business Support</h3>
-        <p>Invoices, letters, reports and administrative support.</p>
-      </div>
-
+    <div class="service">
+      <div class="symbol">🖨️</div>
+      <h3>Printing & Photocopying</h3>
+      <p>Colour and black-and-white printing,
+      photocopying and document reproduction.</p>
     </div>
-  </section>
 
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>
-      We provide reliable, affordable and professional
-      cyber cafe services to individuals, students
-      and businesses. Our goal is to make digital
-      services easier and more accessible.
-    </p>
-  </section>
+    <div class="service">
+      <div class="symbol">💻</div>
+      <h3>Online Services</h3>
+      <p>Online applications, registrations,
+      government services and general assistance.</p>
+    </div>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Visit our cyber cafe for professional assistance.</p>
-    <p>Email: your-email@example.com</p>
-    <p>Phone: Your business phone number</p>
-    <p>Location: Your business location, Kenya</p>
-  </section>
+    <div class="service">
+      <div class="symbol">📄</div>
+      <h3>Typing & Documentation</h3>
+      <p>CV writing, letters, reports,
+      editing and document formatting.</p>
+    </div>
 
-  <footer>
-    <p>&copy; 2026 My Cyber Cafe. All rights reserved.</p>
-  </footer>
+    <div class="service">
+      <div class="symbol">📷</div>
+      <h3>Scanning Services</h3>
+      <p>Document scanning, PDF preparation
+      and digital document conversion.</p>
+    </div>
+
+    <div class="service">
+      <div class="symbol">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>Posters, business cards, advertisements
+      and professional designs.</p>
+    </div>
+
+    <div class="service">
+      <div class="symbol">📊</div>
+      <h3>Business Support</h3>
+      <p>Invoices, spreadsheets, business
+      documents and administrative assistance.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About FastNet Cyber Cafe</h2>
+
+  <p>
+    Located in Ruaka, FastNet Cyber Cafe is committed
+    to providing dependable, affordable and
+    professional cyber services. Whether you need
+    printing, online assistance, document preparation
+    or business support, we are here to help.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Get In Touch</h2>
+
+  <p>We welcome your enquiries and visits.</p>
+
+  <div class="contact-details">
+    <p><strong>Business:</strong> FastNet Cyber Cafe</p>
+    <p><strong>Location:</strong> Ruaka, Kenya</p>
+    <p><strong>Phone:</strong> 0711 596 210</p>
+    <p><strong>Alternative:</strong> 0120 762 69</p>
+
+    <a href="tel:+254711596210" class="btn">
+      Call Us
+    </a>
+
+    <a href="https://wa.me/254711596210"
+       class="btn">
+      WhatsApp
+    </a>
+
+    <a href="https://wa.me/25412076269"
+       class="btn">
+      WhatsApp 2
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>FastNet Cyber Cafe</span>. All Rights Reserved.</p>
+  <p>Serving Ruaka and surrounding areas.</p>
+</footer>
 
 </body>
 </html>
