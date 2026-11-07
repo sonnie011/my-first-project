@@ -165,6 +165,76 @@ section h2 {
   margin-bottom: 10px;
 }
 
+
+.price-section {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.price-folder {
+  max-width: 900px;
+  margin: 25px auto 0;
+  text-align: left;
+  background: white;
+  border: 1px solid #e2e7ef;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #0000000c;
+  overflow: hidden;
+}
+
+.price-folder summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  color: #102343;
+  font-size: 18px;
+  font-weight: bold;
+  background: #fff;
+}
+
+.price-folder summary::-webkit-details-marker {
+  display: none;
+}
+
+.price-folder summary::after {
+  content: "+";
+  margin-left: auto;
+  color: #173b68;
+  font-size: 25px;
+}
+
+.price-folder[open] summary::after {
+  content: "−";
+}
+
+.folder-icon {
+  font-size: 25px;
+}
+
+.folder-hint {
+  color: #68758a;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.price-folder .services {
+  padding: 0 22px;
+}
+
+.price-folder .price-note {
+  text-align: center;
+  padding: 20px 15px 0;
+  font-size: 14px;
+}
+
+.price-folder > .btn {
+  display: table;
+  margin: 15px auto 25px;
+}
+
 .about {
   background: white;
 }
@@ -336,9 +406,11 @@ footer span {
 </section>
 
 
-<section id="prices">
+<section id="prices" class="price-section">
   <h2>Our Price List</h2>
-  <p class="intro">Affordable prices for our most requested cyber services in Ruaka. All prices are in Kenya shillings (KSh).</p>
+  <p class="intro">Want to check our charges? Open the price list below to view prices for our most requested services in Ruaka.</p>
+  <details class="price-folder">
+    <summary><span class="folder-icon" aria-hidden="true">📁</span> View Full Price List <span class="folder-hint">Tap to open</span></summary>
   <div class="services">
     <div class="service">
       <h3>Printing & Photocopying</h3>
@@ -389,10 +461,10 @@ footer span {
       <p>Booking inspection — KSh 200</p>
     </div>
   </div>
-  <p style="margin-top:22px;font-size:14px;">For assistance or to confirm a service, call or WhatsApp FastNet Cyber Cafe.</p>
-  <a href="https://wa.me/254711596210" class="btn">Ask About a Service</a>
+    <p class="price-note">All prices are in Kenya shillings (KSh). For assistance or to confirm a service, call or WhatsApp FastNet Cyber Cafe.</p>
+    <a href="https://wa.me/254711596210" class="btn">Ask About a Service</a>
+  </details>
 </section>
-
 
 <section id="order" style="background:#fff;">
   <h2>Send Documents on WhatsApp</h2>
