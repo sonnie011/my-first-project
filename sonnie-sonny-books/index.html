@@ -36,7 +36,7 @@ h2{font-size:clamp(28px,4vw,39px);font-weight:normal;color:var(--navy);line-heig
 .section-head p{color:var(--muted);font-size:16px}
 .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:24px;max-width:1160px;margin:auto}
 .book{background:white;border:1px solid #e8e2d7;padding:18px;box-shadow:0 8px 24px #14243b0a;display:flex;flex-direction:column}
-.cover{height:245px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(145deg,#172b49,#304d70)}
+.product-cover{display:block;width:100%;height:245px;object-fit:cover;border:0}.cover{height:245px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(145deg,#172b49,#304d70)}
 .cover:before{content:"";position:absolute;inset:12px;border:1px solid #d8bd83a8}
 .cover.gold{background:linear-gradient(145deg,#78613c,#b39a69)}
 .cover.plum{background:linear-gradient(145deg,#3d293d,#79576a)}
@@ -92,52 +92,52 @@ footer strong{color:var(--gold)}
   </div>
   <div class="books">
     <article class="book">
-      <div class="cover plum"><div class="cover-content"><small>A 21-day journey</small><strong>RISE<br>AGAIN</strong><span>Healing • Hope • Renewal</span></div></div>
+      <img class="product-cover" src="covers/rise-again.svg" alt="Rise Again product cover" loading="lazy">
       <h3>Rise Again</h3><p>A guided 21-day healing journey with gentle encouragement, reflection prompts and practical steps to help you rebuild hope and move towards emotional renewal.</p>
       <div class="price">KSh 500</div><a class="button" href="checkout.html?product=rise-again">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover gold"><div class="cover-content"><small>Money management guide</small><strong>BUDGET<br>LIKE A PRO</strong><span>Save KES 5,000 a month</span></div></div>
+      <img class="product-cover" src="covers/budget-like-a-pro.svg" alt="Budget Like a Pro product cover" loading="lazy">
       <h3>Budget Like a Pro</h3><p>A practical budgeting e-book and Excel tracker to help you plan your income, manage spending and work towards saving KSh 5,000 every month, whatever your salary.</p>
       <div class="price">KSh 500</div><a class="button" href="checkout.html?product=budget-like-a-pro">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover"><div class="cover-content"><small>A practical digital guide</small><strong>CREATE & SELL<br>DIGITAL PRODUCTS</strong><span>Using ChatGPT</span></div></div>
+      <img class="product-cover" src="covers/chatgpt-digital-products.svg" alt="Create & Sell Digital Products product cover" loading="lazy">
       <h3>Create and Sell Digital Products with ChatGPT</h3><p>Learn how to use ChatGPT to plan, create and prepare digital products for sale. Includes practical prompts, worksheets and a 30-day action plan to help you move from idea to launch.</p>
       <div class="price">US$12</div><a class="button" href="checkout.html?product=chatgpt-digital-products">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover plum"><div class="cover-content"><small>For couples</small><strong>TOGETHER</strong><span>Marriage connection & intimacy journal</span></div></div>
+      <img class="product-cover" src="covers/together-journal.svg" alt="Together product cover" loading="lazy">
       <h3>Together: Marriage Connection & Intimacy Journal</h3><p>A couples’ journal featuring guided conversations, weekly relationship check-ins, date-night ideas and love-letter activities to encourage deeper connection and intimacy.</p>
       <div class="price">US$8</div><a class="button" href="checkout.html?product=together-journal">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover ink"><div class="cover-content"><small>Your next step starts here</small><strong>FREELANCE<br>LAUNCHPAD</strong><span>Build your freelance journey</span></div></div>
+      <img class="product-cover" src="covers/freelance-launchpad.svg" alt="Freelance Launchpad product cover" loading="lazy">
       <h3>Freelance Launchpad</h3><p>A beginner-friendly resource to help you understand freelancing, identify services you can offer and take practical first steps towards building an independent online career.</p>
       <div class="price">KSh 500</div><a class="button" href="checkout.html?product=freelance-launchpad">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover"><div class="cover-content"><small>For business owners</small><strong>SOCIAL MEDIA<br>CONTENT TEMPLATES</strong><span>10 editable designs</span></div></div>
+      <img class="product-cover" src="covers/social-media-templates.svg" alt="Business Content Templates product cover" loading="lazy">
       <h3>10 Business Content Templates</h3><p>Ten editable business content templates for Instagram, Facebook and other social media platforms. Customise them in PowerPoint or Google Slides to promote your products and services.</p>
       <div class="price">KSh 500</div><a class="button" href="checkout.html?product=social-media-templates">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover plum"><div class="cover-content"><small>Organise your job search</small><strong>JOB<br>APPLICATION KIT</strong><span>CV • Emails • Tracker</span></div></div>
+      <img class="product-cover" src="covers/job-application-kit.svg" alt="Job Application Kit product cover" loading="lazy">
       <h3>Job Application Kit</h3><p>A practical job-search bundle with an editable CV, cover letter, 10 professional email templates and an application tracker. Includes Word and Excel files.</p>
       <div class="price">KSh 300</div><a class="button" href="checkout.html?product=job-application-kit">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover gold"><div class="cover-content"><small>Plan your big day</small><strong>WEDDING BUDGET<br>& GUEST PLANNER</strong><span>Expenses • Vendors • RSVPs</span></div></div>
+      <img class="product-cover" src="covers/wedding-planner.svg" alt="Wedding Budget & Guest Planner product cover" loading="lazy">
       <h3>Wedding Budget & Guest Planner</h3><p>Plan your wedding with Excel and Google Sheets tools to track every expense, manage vendors and organise guest RSVPs in one place.</p>
       <div class="price">KSh 500</div><a class="button" href="checkout.html?product=wedding-planner">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover ink"><div class="cover-content"><small>Take control of your money</small><strong>MONTHLY<br>BUDGET TRACKER</strong><span>Plan • Track • Save</span></div></div>
+      <img class="product-cover" src="covers/monthly-budget-tracker.svg" alt="Monthly Budget Tracker product cover" loading="lazy">
       <h3>Monthly Budget Tracker</h3><p>Simple Excel and Google Sheets tools to plan your monthly budget, track spending and build better saving habits.</p>
       <div class="price">KSh 500</div><a class="button" href="checkout.html?product=monthly-budget-tracker">View checkout details</a>
     </article>
     <article class="book">
-      <div class="cover"><div class="cover-content"><small>For freelancers & businesses</small><strong>INVOICE<br>GENERATOR</strong><span>Automatic totals & payments</span></div></div>
+      <img class="product-cover" src="covers/invoice-generator.svg" alt="Invoice Generator product cover" loading="lazy">
       <h3>Invoice Generator</h3><p>Create professional invoices with Excel and Google Sheets templates featuring automatic totals and payment tracking.</p>
       <div class="price">KSh 300</div><a class="button" href="checkout.html?product=invoice-generator">View checkout details</a>
     </article>
