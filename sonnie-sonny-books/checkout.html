@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sonnie Sonny Books product checkout information.">
+<meta name="theme-color" content="#101f38">
+<title>Product Checkout | Sonnie Sonny Books</title>
+<style>
+:root{--navy:#101f38;--navy2:#1b3152;--gold:#d8bd83;--gold2:#f0dfb7;--cream:#faf8f3;--ink:#202a38;--muted:#687386}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.65}
+header{background:var(--navy);color:#fff;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{color:#fff;text-decoration:none;font-size:22px}.brand span{display:block;color:var(--gold);font:10px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase}
+nav a{color:#fff;text-decoration:none;font:13px Arial,sans-serif;margin-left:18px}
+main{max-width:760px;margin:55px auto;padding:0 22px}
+.eyebrow{font:11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#927642}
+h1{font-size:clamp(30px,5vw,46px);font-weight:normal;color:var(--navy);line-height:1.15;margin:12px 0}
+.card{background:#fff;border:1px solid #e8e2d7;padding:30px;margin:25px 0;box-shadow:0 8px 24px #14243b0a}
+.price{font:bold 20px Arial,sans-serif;color:#8b6c35;margin:15px 0}
+.status{background:#f4efe3;border-left:4px solid var(--gold);padding:16px 18px;margin:24px 0;font:14px/1.6 Arial,sans-serif}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.button{display:inline-block;padding:12px 20px;background:var(--gold);border:1px solid var(--gold);color:var(--navy);text-decoration:none;font:bold 13px Arial,sans-serif;border-radius:3px}
+.button.secondary{background:transparent}
+.small{font:12px/1.6 Arial,sans-serif;color:var(--muted)}
+footer{background:#0b1729;color:#dfe4ec;text-align:center;padding:25px;font:12px Arial,sans-serif;margin-top:70px}
+@media(max-width:560px){header{justify-content:center;text-align:center}nav a{margin:0 7px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="./">Sonnie Sonny Books<span>Books & Digital Reads</span></a><nav><a href="./">Home</a><a href="./#books">Digital Shop</a><a href="./#contact">Contact</a></nav></header>
+<main>
+<div class="eyebrow">Sonnie Sonny Books · Secure checkout</div>
+<h1 id="product-title">Choose a digital resource</h1>
+<div class="card">
+<p id="product-description">Explore our digital collection and select a product to view its details.</p>
+<div class="price" id="product-price"></div>
+<div class="status"><strong>Checkout is being prepared.</strong><br>Payments are not active on this page yet. Please do not send money or share payment details. When secure checkout is launched, this page will be updated with official M-Pesa and international card payment options.</div>
+<p class="small">After payment integration is complete, purchased files will be delivered through a secure download process. No paid download is available from this page at present.</p>
+<div class="actions"><a class="button" id="enquiry" href="mailto:sonniesonnybooks@gmail.com">Ask about this product</a><a class="button secondary" href="./#books">Back to the bookshop</a></div>
+</div>
+<p class="small">Need help? Email <a href="mailto:sonniesonnybooks@gmail.com">sonniesonnybooks@gmail.com</a> or WhatsApp <a href="https://wa.me/254786526800">+254 786 526800</a>.</p>
+</main>
+<footer>Sonnie Sonny Books · Read, Reflect, Grow</footer>
+<script>
+const products = {
+ "rise-again": {title:"Rise Again — 21-Day Healing Journey",price:"KSh 500",description:"A guided 21-day healing journey with gentle encouragement, reflection prompts and practical steps to help you rebuild hope and move towards emotional renewal."},
+ "budget-like-a-pro": {title:"Budget Like a Pro — E-book + Excel Tracker",price:"KSh 500",description:"A practical budgeting e-book and Excel tracker to help you plan your income, manage spending and work towards saving KSh 5,000 every month, whatever your salary."},
+ "chatgpt-digital-products": {title:"Create and Sell Digital Products with ChatGPT",price:"US$12",description:"Learn how to use ChatGPT to plan, create and prepare digital products for sale. Includes practical prompts, worksheets and a 30-day action plan to help you move from idea to launch."},
+ "together-journal": {title:"Together: Marriage Connection & Intimacy Journal",price:"US$8",description:"A couples’ journal featuring guided conversations, weekly relationship check-ins, date-night ideas and love-letter activities to encourage deeper connection and intimacy."}
+};
+const key = new URLSearchParams(window.location.search).get("product");
+const product = products[key];
+if(product){
+ document.title=product.title+" | Sonnie Sonny Books";
+ document.getElementById("product-title").textContent=product.title;
+ document.getElementById("product-description").textContent=product.description;
+ document.getElementById("product-price").textContent=product.price;
+ document.getElementById("enquiry").href="mailto:sonniesonnybooks@gmail.com?subject="+encodeURIComponent("Enquiry about "+product.title);
+} else {
+ document.getElementById("product-title").textContent="Product checkout pages";
+ document.getElementById("product-description").textContent="Choose a digital product from the bookshop to view its details and current price.";
+ document.getElementById("product-price").textContent="Prices shown on the bookshop";
+}
+</script>
+</body>
+</html>
