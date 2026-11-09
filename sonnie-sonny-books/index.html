@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover books, journals and practical digital guides by Sonnie Sonny.">
+<meta name="theme-color" content="#101f38">
+<title>Sonnie Sonny Books | Read, Reflect, Grow</title>
+<style>
+:root{--navy:#101f38;--navy2:#1b3152;--gold:#d8bd83;--gold2:#f0dfb7;--cream:#faf8f3;--ink:#202a38;--muted:#687386;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);line-height:1.65}
+a{color:inherit}
+header{background:var(--navy);color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:45px;height:45px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:22px}
+.brand-name{font-size:23px;letter-spacing:.4px}
+.brand-name span{display:block;color:var(--gold);font:10px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{text-decoration:none;font:13px Arial,sans-serif;color:#f5f1e8}
+nav a:hover{color:var(--gold)}
+.hero{background:linear-gradient(125deg,#0c192d,#203b61);color:white;text-align:center;padding:92px 7% 100px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:380px;height:380px;border:1px solid #d8bd8330;border-radius:50%;right:-120px;top:-180px}
+.eyebrow{font:11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero h1{font-size:clamp(38px,6vw,66px);font-weight:normal;line-height:1.12;max-width:850px;margin:0 auto 20px}
+.hero h1 em{color:var(--gold2);font-weight:normal}
+.hero p{max-width:620px;margin:0 auto 30px;color:#e5e8ed;font-size:18px}
+.button{display:inline-block;padding:12px 24px;border:1px solid var(--gold);background:var(--gold);color:var(--navy);font: bold 13px Arial,sans-serif;text-decoration:none;border-radius:3px}
+.button:hover{background:var(--gold2)}
+.button.outline{background:transparent;color:white}
+section{padding:70px 7%}
+.section-head{text-align:center;max-width:720px;margin:0 auto 36px}
+.section-head .eyebrow{color:#927642}
+h2{font-size:clamp(28px,4vw,39px);font-weight:normal;color:var(--navy);line-height:1.2;margin-bottom:12px}
+.section-head p{color:var(--muted);font-size:16px}
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:24px;max-width:1160px;margin:auto}
+.book{background:white;border:1px solid #e8e2d7;padding:18px;box-shadow:0 8px 24px #14243b0a;display:flex;flex-direction:column}
+.cover{height:245px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(145deg,#172b49,#304d70)}
+.cover:before{content:"";position:absolute;inset:12px;border:1px solid #d8bd83a8}
+.cover.gold{background:linear-gradient(145deg,#78613c,#b39a69)}
+.cover.plum{background:linear-gradient(145deg,#3d293d,#79576a)}
+.cover.ink{background:linear-gradient(145deg,#202a36,#4d5a67)}
+.cover-content{position:relative;z-index:1}
+.cover small{display:block;color:#ead8ad;font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:15px}
+.cover strong{display:block;font-size:25px;line-height:1.18;font-weight:normal}
+.cover span{display:block;font:10px Arial,sans-serif;letter-spacing:1.5px;margin-top:16px;color:#f2e9d7;text-transform:uppercase}
+.book h3{font-size:21px;font-weight:normal;color:var(--navy);line-height:1.25;margin:18px 0 8px}
+.book p{font:14px/1.6 Arial,sans-serif;color:var(--muted);margin-bottom:12px;flex:1}
+.price{font: bold 15px Arial,sans-serif;color:#8b6c35;margin:3px 0 14px}
+.book .button{align-self:flex-start}
+.note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin-top:10px}
+.about{background:#f0ece3}
+.about-inner{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center}
+.author-mark{min-height:220px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:54px;border:8px solid #e7ddc8;outline:1px solid var(--gold)}
+.about p{color:#586273;margin-top:12px}
+.payment{background:var(--navy);color:white;text-align:center}
+.payment h2{color:white}
+.payment p{color:#e0e4ea;max-width:700px;margin:0 auto 20px}
+.payment .eyebrow{color:var(--gold)}
+.payment-methods{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px auto}
+.payment-methods span{border:1px solid #d8bd8377;color:var(--gold2);padding:8px 15px;font:12px Arial,sans-serif}
+.contact{text-align:center}
+.contact p{color:var(--muted);margin:0 auto 22px;max-width:600px}
+footer{background:#0b1729;color:#dfe4ec;text-align:center;padding:25px 7%;font:12px Arial,sans-serif}
+footer strong{color:var(--gold)}
+@media(max-width:650px){header{justify-content:center;text-align:center}nav{justify-content:center;gap:13px}.hero{padding:70px 6%}.about-inner{grid-template-columns:1fr}.author-mark{min-height:150px;width:150px;margin:auto}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home" aria-label="Sonnie Sonny Books home">
+    <span class="brand-mark" aria-hidden="true">S</span>
+    <span class="brand-name">Sonnie Sonny<span>Books & Digital Reads</span></span>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#books">Books</a><a href="#author">About the Author</a><a href="#payments">Payments</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="eyebrow">Welcome to Sonnie Sonny Books</div>
+  <h1>Stories and resources to help you <em>read, reflect and grow.</em></h1>
+  <p>Explore thoughtful journals, practical guides and inspiring reads created to support your personal journey, relationships and ambitions.</p>
+  <a class="button" href="#books">Explore the Bookshop</a>
+</section>
+<section id="books">
+  <div class="section-head">
+    <div class="eyebrow">The collection</div>
+    <h2>Find your next good read</h2>
+    <p>Browse the current collection of digital books, guided journals and practical resources.</p>
+  </div>
+  <div class="books">
+    <article class="book">
+      <div class="cover plum"><div class="cover-content"><small>A 21-day journey</small><strong>RISE<br>AGAIN</strong><span>Healing • Hope • Renewal</span></div></div>
+      <h3>Rise Again</h3><p>A 21-day healing journey with gentle encouragement and reflection to help you take your next steps with hope.</p>
+      <div class="price">KSh 500</div><a class="button" href="#payments">Purchase options</a>
+    </article>
+    <article class="book">
+      <div class="cover gold"><div class="cover-content"><small>Money management guide</small><strong>BUDGET<br>LIKE A PRO</strong><span>Save KES 5,000 a month</span></div></div>
+      <h3>Budget Like a Pro</h3><p>A practical e-book and Excel tracker designed to help you plan your money and work towards saving KSh 5,000 a month on any salary.</p>
+      <div class="price">KSh 500</div><a class="button" href="#payments">Purchase options</a>
+    </article>
+    <article class="book">
+      <div class="cover"><div class="cover-content"><small>A practical digital guide</small><strong>CREATE & SELL<br>DIGITAL PRODUCTS</strong><span>Using ChatGPT</span></div></div>
+      <h3>Create and Sell Digital Products with ChatGPT</h3><p>Learn how to plan and create digital products with practical prompts, worksheets and a 30-day launch plan.</p>
+      <div class="price">US$12</div><a class="button" href="#payments">Purchase options</a>
+    </article>
+    <article class="book">
+      <div class="cover plum"><div class="cover-content"><small>For couples</small><strong>TOGETHER</strong><span>Marriage connection & intimacy journal</span></div></div>
+      <h3>Together: Marriage Connection & Intimacy Journal</h3><p>A guided journal with thoughtful prompts, weekly check-ins, date-night ideas and love-letter activities for couples.</p>
+      <div class="price">US$8</div><a class="button" href="#payments">Purchase options</a>
+    </article>
+    <article class="book">
+      <div class="cover ink"><div class="cover-content"><small>Your next step starts here</small><strong>FREELANCE<br>LAUNCHPAD</strong><span>Build your freelance journey</span></div></div>
+      <h3>Freelance Launchpad</h3><p>A digital resource for people taking steps towards freelance work and building an independent career.</p>
+      <div class="price">Price to be confirmed</div><a class="button" href="#contact">Ask about this book</a>
+    </article>
+  </div>
+</section>
+<section class="about" id="author">
+  <div class="about-inner">
+    <div class="author-mark" aria-hidden="true">SS</div>
+    <div><div class="eyebrow">Meet the author</div><h2>Welcome to my bookshelf</h2>
+    <p>Sonnie Sonny creates books and digital resources for readers who value encouragement, practical tools and meaningful personal growth.</p>
+    <p>This bookstore brings the collection together in one place, making it easier to discover resources for healing, relationships, money management and building new skills.</p></div>
+  </div>
+</section>
+<section class="payment" id="payments">
+  <div class="eyebrow">Secure checkout is being prepared</div>
+  <h2>Your bookstore. Your checkout experience.</h2>
+  <p>We are preparing a secure payment system for Kenyan and international readers. The planned options are M-Pesa for customers in Kenya and debit or credit cards for customers worldwide.</p>
+  <div class="payment-methods"><span>M-Pesa</span><span>Visa</span><span>Mastercard</span><span>International cards</span></div>
+  <p class="note" style="color:#d5dbe4">Checkout is not active yet. Please do not send payment until the official checkout instructions are published here.</p>
+</section>
+<section class="contact" id="contact">
+  <div class="section-head"><div class="eyebrow">Get in touch</div><h2>Questions about a book?</h2><p>For book enquiries, bulk orders or support, send a message and include the title you are interested in.</p>
+  <a class="button" href="mailto:gracesonny.gumroad@gmail.com?subject=Sonnie%20Sonny%20Books%20enquiry">Email the Bookshop</a></div>
+</section>
+</main>
+<footer><p><strong>Sonnie Sonny Books</strong> · Read, Reflect, Grow</p><p>© 2026 Sonnie Sonny Books. All rights reserved.</p></footer>
+</body>
+</html>
