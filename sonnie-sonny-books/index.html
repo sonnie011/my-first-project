@@ -115,6 +115,20 @@ section{padding:48px 5%}
  #quick-menu strong{margin:0 5px 0 2px;white-space:nowrap;font-size:9px}
  #quick-menu a{font-size:10px;padding:7px 6px;white-space:nowrap}
 }
+
+/* Simple book order form */
+.order-section{background:#f7f3eb}
+.order-form{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e8e2d7;border-top:3px solid var(--gold);border-radius:8px;padding:24px;box-shadow:0 8px 24px #14243b0a}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.order-field{display:flex;flex-direction:column;gap:6px}
+.order-field.full{grid-column:1/-1}
+.order-field label{font:13px Arial,sans-serif;color:var(--navy);font-weight:bold}
+.order-field input,.order-field select,.order-field textarea{width:100%;padding:12px;border:1px solid #d9d3c8;border-radius:4px;background:#fff;color:var(--ink);font:14px Arial,sans-serif}
+.order-field input:focus,.order-field select:focus,.order-field textarea:focus{outline:2px solid #d8bd83;outline-offset:1px}
+.order-summary{background:#f7f3eb;border-radius:5px;padding:12px 14px;font:14px/1.6 Arial,sans-serif;color:var(--navy)}
+.order-help{font:12px/1.5 Arial,sans-serif;color:var(--muted)}
+@media(max-width:600px){.order-grid{grid-template-columns:1fr}.order-field.full{grid-column:auto}.order-form{padding:17px}}
+
 </style>
 </head>
 <body>
@@ -124,7 +138,7 @@ section{padding:48px 5%}
     <span class="brand-name">Sonnie Sonny<span>Books & Digital Reads</span></span>
   </a>
   <nav aria-label="Main navigation">
-    <a href="#home">Home</a><a href="#amazon-books">My Books</a><a href="#featured-book">Featured Book</a><a href="#reader-reviews">Reader Reviews</a><a href="#books">Digital Products</a><a href="#author">About the Author</a><a href="#community">Readers’ Community</a><a href="#reading-corner">Reading Corner</a><a href="#faq">FAQs</a><a href="#payments">Payments</a><a href="#contact">Contact</a>
+    <a href="#home">Home</a><a href="#amazon-books">My Books</a><a href="#order-form">Order a Book</a><a href="#featured-book">Featured Book</a><a href="#reader-reviews">Reader Reviews</a><a href="#books">Digital Products</a><a href="#author">About the Author</a><a href="#community">Readers’ Community</a><a href="#reading-corner">Reading Corner</a><a href="#faq">FAQs</a><a href="#payments">Payments</a><a href="#contact">Contact</a>
   </nav>
 </header>
 <main>
@@ -189,6 +203,63 @@ section{padding:48px 5%}
   </div>
   <p style="text-align:center;margin-top:28px"><a class="button outline" style="background:#1b3152;color:white;border-color:#1b3152" href="https://www.amazon.com/author/sonie101" target="_blank" rel="noopener noreferrer">Also find Sonnie Sonny on Amazon</a></p>
 </section>
+
+<section class="order-section" id="order-form">
+  <div class="section-head">
+    <div class="eyebrow">A simple way to order</div>
+    <h2>Order Your Book</h2>
+    <p>Choose your book and format, enter your contact details, then send your order directly to us on WhatsApp.</p>
+  </div>
+  <form class="order-form" id="book-order-form">
+    <div class="order-grid">
+      <div class="order-field full">
+        <label for="order-book">Choose a book</label>
+        <select id="order-book" name="book" required>
+          <option value="">Select a book</option>
+          <option>After the Tears</option>
+          <option>The Long Way to Joy</option>
+          <option>The Myth of the Goat Wife</option>
+          <option>Together</option>
+          <option>When Love Costs Too Much</option>
+        </select>
+      </div>
+      <div class="order-field">
+        <label for="order-format">Choose your format</label>
+        <select id="order-format" name="format" required>
+          <option value="">Select format</option>
+          <option value="PDF">PDF — KSh 600</option>
+          <option value="Printed">Printed — KSh 1,000</option>
+        </select>
+      </div>
+      <div class="order-field">
+        <label for="order-name">Your name</label>
+        <input id="order-name" name="customer_name" type="text" autocomplete="name" placeholder="Enter your name" required>
+      </div>
+      <div class="order-field">
+        <label for="order-phone">WhatsApp number</label>
+        <input id="order-phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. 07xx xxx xxx" required>
+      </div>
+      <div class="order-field" id="order-email-wrap">
+        <label for="order-email">Email address (optional)</label>
+        <input id="order-email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+      </div>
+      <div class="order-field full" id="order-location-wrap" hidden>
+        <label for="order-location">Delivery location for printed book</label>
+        <input id="order-location" name="delivery_location" type="text" autocomplete="street-address" placeholder="Town, area or delivery address">
+      </div>
+      <div class="order-field full">
+        <label for="order-notes">Anything else? (optional)</label>
+        <textarea id="order-notes" name="notes" rows="3" placeholder="For example, preferred PDF delivery by email or WhatsApp"></textarea>
+      </div>
+      <div class="order-field full">
+        <div class="order-summary" id="order-price-summary" aria-live="polite">Select a book and format to see the price. Printed delivery is charged separately.</div>
+        <p class="order-help">This form prepares a WhatsApp order message. It does not take payment. We will confirm availability, delivery charges (for printed copies) and payment instructions with you directly.</p>
+        <button class="button" type="submit">Continue to WhatsApp</button>
+      </div>
+    </div>
+  </form>
+</section>
+
 <section id="reader-reviews" style="background:#f0ece3;text-align:center;padding:38px 5%">
   <div class="section-head" style="margin-bottom:18px">
     <div class="eyebrow">Words from our readers</div>
@@ -369,6 +440,38 @@ document.querySelectorAll('[data-theme-filter]').forEach(function(button){
     });
   });
 });
+
+document.getElementById('book-order-form').addEventListener('change',function(){
+  var format=document.getElementById('order-format').value;
+  var locationWrap=document.getElementById('order-location-wrap');
+  var locationInput=document.getElementById('order-location');
+  locationWrap.hidden=format!=='Printed';
+  locationInput.required=format==='Printed';
+  var price=format==='PDF'?'KSh 600':format==='Printed'?'KSh 1,000':'';
+  document.getElementById('order-price-summary').textContent=price
+    ? 'Book price: '+price+'. Printed delivery charges are quoted separately.'
+    : 'Select a book and format to see the price. Printed delivery is charged separately.';
+});
+document.getElementById('book-order-form').addEventListener('submit',function(event){
+  event.preventDefault();
+  var form=event.currentTarget;
+  if(!form.reportValidity()) return;
+  var data=new FormData(form);
+  var message=[
+    'Hello Sonnie Sonny Books, I would like to place a book order.',
+    'Book: '+data.get('book'),
+    'Format: '+data.get('format'),
+    'Price: '+(data.get('format')==='PDF'?'KSh 600':'KSh 1,000'),
+    'Name: '+data.get('customer_name'),
+    'WhatsApp: '+data.get('phone'),
+    data.get('email')?'Email: '+data.get('email'):'',
+    data.get('delivery_location')?'Delivery location: '+data.get('delivery_location'):'',
+    data.get('notes')?'Additional details: '+data.get('notes'):'',
+    'Please confirm availability and share payment and delivery instructions.'
+  ].filter(Boolean).join('\n');
+  window.location.href='https://wa.me/254786526800?text='+encodeURIComponent(message);
+});
+
 </script>
 </body>
 </html>
