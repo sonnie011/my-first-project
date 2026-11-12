@@ -68,7 +68,7 @@ h2{font-size:clamp(28px,4vw,39px);font-weight:normal;color:var(--navy);line-heig
 .note{font:12px/1.5 Arial,sans-serif;color:var(--muted);margin-top:10px}
 .about{background:#f0ece3}
 .about-inner{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:center}
-.author-mark{min-height:220px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:54px;border:8px solid #e7ddc8;outline:1px solid var(--gold)}
+.author-photo{width:100%;max-width:260px;height:320px;object-fit:cover;object-position:center;border:7px solid #e7ddc8;outline:1px solid var(--gold);border-radius:4px;display:block;margin:auto}
 .about p{color:#586273;margin-top:12px}
 .payment{background:var(--navy);color:white;text-align:center}
 .payment h2{color:white}
@@ -102,7 +102,7 @@ section{padding:48px 5%}
 #books .button{padding:8px 10px;font-size:11px}
 .about-inner{gap:25px}
 
-@media(max-width:650px){header{justify-content:center;text-align:center}nav{justify-content:center;gap:13px}.hero{padding:70px 6%}.about-inner{grid-template-columns:1fr}.author-mark{min-height:150px;width:150px;margin:auto}}
+@media(max-width:650px){header{justify-content:center;text-align:center}nav{justify-content:center;gap:13px}.hero{padding:70px 6%}.about-inner{grid-template-columns:1fr}.author-photo{max-width:190px;height:230px}}
 
 /* Quick menu: fixed to the right on desktop */
 #quick-menu{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:1000;width:170px;display:block;flex-direction:column;gap:2px;background:#101f38;border:1px solid #d8bd83;border-radius:8px;padding:12px;box-shadow:0 8px 25px #101f3833}
@@ -230,7 +230,7 @@ section{padding:48px 5%}
 </section>
 <section class="about" id="author">
   <div class="about-inner">
-    <div class="author-mark" aria-hidden="true">SS</div>
+    <img class="author-photo" src="covers/sonnie-sonny-author.jpg" alt="Sonnie Sonny, author of Sonnie Sonny Books" loading="lazy">
     <div><div class="eyebrow">Meet the author</div><h2>Sonnie Sonny: an author writing from lived experience</h2>
     <p>Hello, I’m Sonnie Sonny. Writing is deeply personal to me. The books <em>After the Tears</em> and <em>The Long Way to Joy</em> grew out of my own journey through infertility and miscarriage—the difficult seasons, the heartbreak, the questions, and the strength it took to keep moving forward.</p>
     <p>These are more than stories I wanted to tell; they are part of my life. I wrote them to give a voice to experiences that can feel lonely, and to offer understanding, comfort and hope to anyone walking a similar road. My journey has shaped the woman I am today, and sharing it is one way I hope someone else feels seen and less alone.</p>
