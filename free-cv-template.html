@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Editable CV Template | FastNet Cyber Cafe</title>
+<meta name="description" content="Create and download a free editable CV template from FastNet Cyber Cafe in Ruaka.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#263449;line-height:1.6}
+header{background:#0b1e3b;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+header a{color:#fff;text-decoration:none}.brand{font-size:23px;font-weight:bold}.brand span{color:#e7bb50}
+main{max-width:1050px;margin:32px auto;padding:0 16px}.intro,.panel{background:#fff;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 4px 18px #10234312}
+h1,h2{color:#102343;margin-top:0}h1{font-size:28px}.note{background:#fff8e7;border-left:4px solid #d9ad42;padding:12px 15px;border-radius:5px}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label{display:block;font-weight:bold;font-size:14px;color:#173b68}
+input,textarea{width:100%;margin-top:5px;padding:11px;border:1px solid #cbd3df;border-radius:6px;font:inherit;color:#263449}
+textarea{min-height:105px;resize:vertical}.full{grid-column:1/-1}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button,.btn{border:0;border-radius:6px;padding:12px 18px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:#e7bb50;color:#102343}.secondary{background:#102343;color:#fff}.light{background:#edf1f7;color:#102343}
+small{color:#68758a}.footer{text-align:center;color:#68758a;padding:20px}
+@media(max-width:650px){form{grid-template-columns:1fr}.full{grid-column:auto}main{margin-top:18px}.intro,.panel{padding:18px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="index.html">FastNet<span> Cyber Cafe</span></a><a href="index.html">← Back to website</a></header>
+<main>
+<section class="intro">
+<h1>Free Editable CV Template</h1>
+<p>Fill in the sections below, then download your CV as an editable Word-compatible document. Open it in Microsoft Word or a compatible word processor to make further changes.</p>
+<p class="note"><strong>Free to use.</strong> Your details are processed in this page only; this form does not send or save your information to FastNet.</p>
+</section>
+<section class="panel">
+<h2>1. Personal Details</h2>
+<form id="cvForm">
+<label>Full name<input id="name" placeholder="e.g. Jane Wanjiku"></label>
+<label>Phone number<input id="phone" placeholder="e.g. 07XX XXX XXX"></label>
+<label>Email address<input id="email" type="email" placeholder="e.g. jane@email.com"></label>
+<label>Town / County<input id="location" placeholder="e.g. Ruaka, Kiambu County"></label>
+<label class="full">Professional profile<textarea id="profile" placeholder="Write 3–4 sentences about your experience, strengths and the role you are seeking."></textarea></label>
+<label class="full">Key skills<textarea id="skills" placeholder="List your relevant skills, separated by commas or on separate lines."></textarea></label>
+<label class="full">Work experience<textarea id="experience" placeholder="Job Title – Company (Month Year–Month Year)&#10;• Describe your responsibilities and achievements.&#10;&#10;Previous Job – Company (Dates)&#10;• Describe your responsibilities and achievements."></textarea></label>
+<label class="full">Education<textarea id="education" placeholder="Qualification – Institution – Year completed"></textarea></label>
+<label class="full">Certifications and training<textarea id="certs" placeholder="Certificate or training – Institution – Year"></textarea></label>
+<label class="full">Digital and technical skills<textarea id="digital" placeholder="List software, tools, systems or equipment you can confidently use."></textarea></label>
+<label class="full">Achievements (optional)<textarea id="achievements" placeholder="Add relevant awards, projects or measurable achievements."></textarea></label>
+<label class="full">Referees<textarea id="referees" placeholder="Available upon request. Or provide referees' names and contact details with their permission."></textarea></label>
+</form>
+<div class="actions">
+<button class="primary" type="button" onclick="downloadCV()">Download Editable CV (Word)</button>
+<button class="secondary" type="button" onclick="printCV()">Print / Save as PDF</button>
+<button class="light" type="button" onclick="document.getElementById('cvForm').reset()">Clear Form</button>
+</div>
+<p><small>Tip: Use clear, honest information, check spelling and tailor your CV to each job. Do not include your national ID number, PIN or passwords.</small></p>
+</section>
+<section class="intro">
+<h2>Need help preparing your CV?</h2>
+<p>FastNet Cyber Cafe offers professional CV preparation in Ruaka for <strong>KSh 200</strong>. CV typing is also available at KSh 100.</p>
+<a class="btn primary" href="https://wa.me/254112076269?text=Hello%20FastNet%20Cyber%20Cafe%2C%20I%20would%20like%20help%20preparing%20a%20professional%20CV.">WhatsApp FastNet for CV Assistance</a>
+</section>
+</main>
+<div class="footer">© 2026 FastNet Cyber Cafe · Ruaka, Kenya</div>
+<script>
+function val(id){return document.getElementById(id).value.trim()}
+function safe(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')}
+function buildDoc(){
+ const name=val('name')||'YOUR FULL NAME';
+ const contact=[val('location'),val('phone'),val('email')].filter(Boolean).join(' | ');
+ const fields=[['PROFESSIONAL PROFILE',val('profile')],['KEY SKILLS',val('skills')],['WORK EXPERIENCE',val('experience')],['EDUCATION',val('education')],['CERTIFICATIONS & TRAINING',val('certs')],['DIGITAL & TECHNICAL SKILLS',val('digital')],['ACHIEVEMENTS',val('achievements')],['REFEREES',val('referees')]];
+ let body='<h1>'+safe(name)+'</h1><p class="contact">'+safe(contact)+'</p>';
+ fields.forEach(([title,content])=>{if(content)body+='<h2>'+title+'</h2><p>'+safe(content)+'</p>'});
+ return '<!DOCTYPE html><html><head><meta charset="utf-8"><title>CV - '+safe(name)+'</title><style>body{font-family:Arial,sans-serif;color:#263449;line-height:1.5;margin:36px}h1{text-align:center;color:#102343;font-size:24pt;margin-bottom:4px}h2{font-size:12pt;color:#ad8129;border-bottom:1px solid #d9c28b;padding-bottom:4px;margin-top:20px}.contact{text-align:center;color:#68758a;font-size:10pt}p{white-space:normal}</style></head><body>'+body+'<hr><p style="text-align:center;font-size:9pt;color:#ad8129">CV template created using FastNet Cyber Cafe free CV tool</p></body></html>';
+}
+function downloadCV(){
+ const blob=new Blob(['\ufeff',buildDoc()],{type:'application/msword'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');
+ a.href=url;a.download=(val('name')||'My') .replace(/[^a-z0-9_-]/gi,'_')+'_CV.doc';
+ document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+}
+function printCV(){
+ const w=window.open('','_blank');if(!w){alert('Please allow pop-ups for this page to print your CV.');return}
+ w.document.open();w.document.write(buildDoc());w.document.close();w.focus();w.print();
+}
+</script>
+</body>
+</html>
