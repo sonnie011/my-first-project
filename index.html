@@ -367,6 +367,7 @@ footer span {
     <a href="#prices">Price List</a>
     <a href="#reviews">Reviews</a>
     <a href="#order">Send Documents</a>
+    <a href="#cv-template">Free CV Template</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -512,6 +513,32 @@ footer span {
   </details>
 </section>
 
+
+<section id="cv-template" style="background:#f5f6f9;">
+  <h2>Free Editable CV Template</h2>
+  <p class="intro">Create a simple professional CV using the form below. Enter your details, then download an editable Word-compatible document for free. You can update it later in Microsoft Word or a compatible editor.</p>
+  <div class="contact-details" style="text-align:left;max-width:760px;">
+    <label for="cvName"><strong>Full name</strong></label>
+    <input id="cvName" type="text" placeholder="Your full name" style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;">
+    <label for="cvContact"><strong>Phone, email and location</strong></label>
+    <input id="cvContact" type="text" placeholder="0712 345 678 | name@email.com | Town, Kenya" style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;">
+    <label for="cvProfile"><strong>Professional profile</strong></label>
+    <textarea id="cvProfile" rows="4" placeholder="Write 3–4 sentences about your experience, strengths and the role you are seeking." style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;"></textarea>
+    <label for="cvSkills"><strong>Key skills</strong></label>
+    <textarea id="cvSkills" rows="3" placeholder="List your most relevant skills, separated by commas." style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;"></textarea>
+    <label for="cvExperience"><strong>Work experience</strong></label>
+    <textarea id="cvExperience" rows="6" placeholder="Job title | Employer | Dates&#10;Describe your responsibilities and achievements.&#10;&#10;Previous job title | Employer | Dates&#10;Describe your responsibilities and achievements." style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;"></textarea>
+    <label for="cvEducation"><strong>Education and qualifications</strong></label>
+    <textarea id="cvEducation" rows="4" placeholder="Qualification | Institution | Year completed" style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;"></textarea>
+    <label for="cvOther"><strong>Certifications, languages or additional information</strong></label>
+    <textarea id="cvOther" rows="3" placeholder="Add relevant certificates, languages or computer skills." style="width:100%;padding:11px;margin:6px 0 12px;border:1px solid #ccd4df;border-radius:6px;font:inherit;"></textarea>
+    <button type="button" class="btn" onclick="downloadFastNetCV()">⬇ Download My Editable CV</button>
+    <p style="font-size:13px;color:#68758a;margin-top:12px;">Your entries are used in your browser to create the document. They are not sent to FastNet by this form. Check your details and tailor your CV to each job before sending it.</p>
+  </div>
+  <p class="intro" style="margin-top:20px;"><strong>Need help?</strong> FastNet can help type, format and professionally prepare your CV for KSh 200. <a href="https://wa.me/254112076269?text=Hello%20FastNet%2C%20I%20would%20like%20help%20preparing%20a%20professional%20CV.">Contact us on WhatsApp.</a></p>
+</section>
+
+
 <section id="order" style="background:#fff;">
   <h2>Send Documents on WhatsApp</h2>
   <p class="intro">Need printing or photocopying? Send your documents to FastNet before visiting the shop. We will confirm the details and let you know when your order is ready.</p>
@@ -649,6 +676,40 @@ footer span {
   <p>© 2026 FastNet Cyber Cafe. All rights reserved.</p>
   <p>Ruaka, Kenya | Call: 0711 596 210</p>
 </footer>
+
+
+<script>
+function downloadFastNetCV() {
+  const fields = [
+    ["PROFESSIONAL PROFILE", "cvProfile"],
+    ["KEY SKILLS", "cvSkills"],
+    ["WORK EXPERIENCE", "cvExperience"],
+    ["EDUCATION & QUALIFICATIONS", "cvEducation"],
+    ["ADDITIONAL INFORMATION", "cvOther"]
+  ];
+  const get = id => document.getElementById(id).value.trim();
+  const esc = value => value.replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+  const name = get("cvName") || "My CV";
+  const contact = get("cvContact");
+  let body = '<h1 style="color:#102343;text-align:center;">' + esc(name) + '</h1>';
+  if (contact) body += '<p style="text-align:center;">' + esc(contact) + '</p>';
+  fields.forEach(([title,id]) => {
+    const value = get(id);
+    if (value) body += '<h2 style="color:#b58b30;border-bottom:1px solid #d9c28b;">' + title + '</h2><p>' + esc(value).replace(/\n/g,"<br>") + '</p>';
+  });
+  body += '<p style="text-align:center;color:#b58b30;font-size:9pt;">Prepared using the free CV template from FastNet Cyber Cafe, Ruaka</p>';
+  const html = '<html><head><meta charset="utf-8"></head><body style="font-family:Arial,sans-serif;color:#243047;line-height:1.5;">' + body + '</body></html>';
+  const blob = new Blob(['\ufeff', html], {type:'application/msword'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = (name.replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'') || 'My') + '-CV.doc';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+</script>
 
 </body>
 </html>
