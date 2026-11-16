@@ -513,6 +513,20 @@ document.getElementById('book-order-form').addEventListener('submit',function(ev
   window.location.href='https://wa.me/254786526800?text='+encodeURIComponent(message);
 });
 
+ 
+// Track clicks that open a Sonnie Sonny Books WhatsApp conversation.
+document.addEventListener('click', function(event){
+  var link = event.target.closest('a[href*="wa.me/"]');
+  if (!link) return;
+  if (typeof gtag === 'function') {
+    gtag('event', 'whatsapp_click', {
+      link_url: link.href,
+      link_text: (link.textContent || '').trim().slice(0, 100),
+      page_path: window.location.pathname
+    });
+  }
+});
+
 </script>
 </body>
 </html>
